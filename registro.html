@@ -1,0 +1,317 @@
+<!doctype html>
+<!-- Generado por generar-paginas.ps1. Editar la plantilla para conservar cambios. -->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="McLaren F1: modelos 3D interactivos, especificaciones de fábrica y registro por chasis."
+    />
+    <title>Registro de unidades · McLaren F1</title>
+    <script
+      src="js/traducciones.js"
+      defer
+    ></script>
+    <script
+      src="js/idiomas.js"
+      defer
+    ></script>
+    <script
+      src="js/sitio.js"
+      defer
+    ></script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/mclaren-f1.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="css/estilos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/registro.css"
+    />
+    <script
+      src="js/datos.js"
+      defer
+    ></script>
+    <script
+      src="js/imagenes.js"
+      defer
+    ></script>
+    <script
+      src="js/registro.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <a
+      class="skip"
+      href="#contenido"
+      >Saltar al contenido</a
+    >
+    <!-- Cabecera compartida: js/sitio.js controla el menú en pantallas compactas. -->
+    <header>
+      <a
+        class="brand"
+        href="mclaren.html"
+        aria-label="McLaren F1 · Inicio"
+      >
+        <img
+          class="brand-emblem"
+          src="assets/mclaren-f1.svg"
+          alt="Emblema McLaren F1"
+          width="106"
+          height="64"
+        />
+        <span>ARCHIVO INDEPENDIENTE</span>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="nav-toggle-label">Menú</span>
+      </button>
+      <nav
+        id="site-navigation"
+        aria-label="Navegación principal"
+      >
+        <a href="mclaren.html">Inicio</a>
+        <a href="calle.html">Calle</a>
+        <a href="lm.html">LM</a>
+        <a href="gt.html">GT</a>
+        <a href="gtr.html">GTR</a>
+        <a
+          href="registro.html"
+          aria-current="page"
+          >Registro de unidades ↗</a
+        >
+        <a href="galeria.html">Imágenes</a>
+      </nav>
+      <div
+        class="language-switch"
+        role="group"
+        aria-label="Idioma / Language"
+      >
+        <button
+          type="button"
+          data-language="es"
+          lang="es"
+          aria-label="Español"
+          aria-pressed="true"
+        >
+          <span class="language-full">Español</span
+          ><span
+            class="language-short"
+            aria-hidden="true"
+            >ES</span
+          >
+        </button>
+        <button
+          type="button"
+          data-language="en"
+          lang="en"
+          aria-label="English"
+          aria-pressed="false"
+        >
+          <span class="language-full">English</span
+          ><span
+            class="language-short"
+            aria-hidden="true"
+            >EN</span
+          >
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <!-- js/registro.js construye las filas y sus fichas a partir de js/datos.js. -->
+      <section class="registry-intro">
+        <span class="eyebrow">EL ARCHIVO / REGISTRO DE UNIDADES</span>
+        <h1>Historias por <span>chasis.</span></h1>
+        <p>Explora cada unidad por chasis, versión y configuración.</p>
+        <details
+          class="registry-info"
+          open
+        >
+          <summary>Sobre este registro</summary>
+          <p class="data-note">
+            Archivo en actualización. La información histórica de cada unidad
+            puede diferir de su configuración de fábrica o de su situación
+            actual. «???» indica un dato sin confirmar.
+          </p>
+        </details>
+        <div
+          id="resumen-versiones"
+          class="registry-summary"
+          aria-label="Unidades documentadas por versión, incluidos los prototipos"
+        ></div>
+      </section>
+      <section class="registry">
+        <form
+          id="filtros"
+          class="filters"
+          role="search"
+        >
+          <label class="search"
+            >Buscar unidad<input
+              id="buscar"
+              type="search"
+              placeholder="Chasis, VIN, matrícula, color, historial…" /></label
+          ><label
+            >Versión<select id="version">
+              <option value="todas">Todas</option>
+              <option value="calle">Calle</option>
+              <option value="lm">LM</option>
+              <option value="gt">GT</option>
+              <option value="gtr">GTR</option>
+            </select></label
+          ><label
+            id="filtro-evolucion"
+            hidden
+            >Evolución GTR<select
+              id="evolucion"
+              disabled
+            >
+              <option value="">Todas</option>
+              <option value="1995">GTR 1995</option>
+              <option value="1996">GTR 1996</option>
+              <option value="1997">GTR 1997</option>
+            </select></label
+          ><label class="location-filter"
+            >Ubicación<select id="ubicacion">
+              <option value="">Todas</option>
+            </select></label
+          ><button
+            class="reset"
+            type="reset"
+            aria-label="Limpiar filtros"
+          >
+            <span
+              class="reset-icon"
+              aria-hidden="true"
+              >↺</span
+            >
+            <span class="reset-label">Limpiar filtros</span>
+          </button>
+        </form>
+        <div class="table-meta">
+          <p
+            id="contador"
+            aria-live="polite"
+          ></p>
+          <span>Abre una ficha para explorar la unidad ↗</span>
+        </div>
+        <!-- En móvil, css/registro.css presenta estas mismas filas como tarjetas. -->
+        <div class="table-scroll">
+          <table>
+            <caption class="sr-only">
+              Unidades del registro McLaren F1
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Chasis</th>
+                <th scope="col">Versión</th>
+                <th scope="col">Color exterior</th>
+                <th scope="col">VIN</th>
+                <th scope="col">Ubicación</th>
+                <th scope="col">Ficha</th>
+              </tr>
+            </thead>
+            <tbody id="unidades"></tbody>
+          </table>
+        </div>
+        <p
+          id="vacio"
+          class="empty"
+          hidden
+        >
+          No hay unidades documentadas que coincidan con estos filtros.
+        </p>
+        <noscript
+          >Activa JavaScript para consultar el registro de unidades.</noscript
+        >
+      </section>
+      <!-- Se reutiliza un único diálogo para la unidad seleccionada. -->
+      <dialog
+        id="ficha"
+        aria-labelledby="ficha-titulo"
+      >
+        <div class="dialog-top">
+          <span
+            class="eyebrow"
+            id="ficha-version"
+            >FICHA DE UNIDAD / CALLE</span
+          ><button
+            id="cerrar"
+            aria-label="Cerrar ficha"
+          >
+            ✕
+          </button>
+        </div>
+        <h2 id="ficha-titulo"></h2>
+        <div
+          id="ficha-galeria"
+          class="unit-gallery"
+          hidden
+        ></div>
+        <dl id="ficha-datos"></dl>
+        <p
+          id="ficha-fuente"
+          class="data-note"
+          hidden
+        ></p>
+        <p
+          id="ficha-contexto"
+          class="data-note"
+        >
+          Configuración e información documentadas de esta unidad. Los campos
+          sin información se muestran como «Sin dato».
+        </p>
+      </dialog>
+      <!-- El visor conserva la ficha abierta debajo para volver al mismo punto. -->
+      <dialog
+        id="ficha-foto"
+        aria-labelledby="ficha-foto-titulo"
+      >
+        <button
+          id="ficha-foto-volver"
+          type="button"
+          autofocus
+        >
+          ← Volver a la ficha
+        </button>
+        <img
+          id="ficha-foto-imagen"
+          alt=""
+        />
+        <p id="ficha-foto-titulo"></p>
+      </dialog>
+    </main>
+    <footer>
+      <span>McLaren F1 / Archivo independiente</span
+      ><span
+        >Historia, ingeniería y registro de unidades · No afiliado a
+        McLaren</span
+      >
+    </footer>
+  </body>
+</html>

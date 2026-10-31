@@ -1,0 +1,457 @@
+<!doctype html>
+<!-- Generado por generar-paginas.ps1. Editar la plantilla para conservar cambios. -->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="McLaren F1: modelos 3D interactivos, especificaciones de fábrica y registro por chasis."
+    />
+    <title>Explorador 3D · McLaren F1</title>
+    <script
+      src="js/traducciones.js"
+      defer
+    ></script>
+    <script
+      src="js/idiomas.js"
+      defer
+    ></script>
+    <script
+      src="js/sitio.js"
+      defer
+    ></script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/mclaren-f1.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="css/estilos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/mclaren.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/visor.css"
+    />
+    <script
+      type="module"
+      src="vendor/model-viewer.min.js"
+    ></script>
+    <script
+      src="js/catalogo.js"
+      defer
+    ></script>
+    <script
+      src="js/visor.js"
+      defer
+    ></script>
+    <script
+      src="js/mclaren.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <a
+      class="skip"
+      href="#contenido"
+      >Saltar al contenido</a
+    >
+    <!-- Cabecera compartida: js/sitio.js controla el menú en pantallas compactas. -->
+    <header>
+      <a
+        class="brand"
+        href="mclaren.html"
+        aria-label="McLaren F1 · Inicio"
+      >
+        <img
+          class="brand-emblem"
+          src="assets/mclaren-f1.svg"
+          alt="Emblema McLaren F1"
+          width="106"
+          height="64"
+        />
+        <span>ARCHIVO INDEPENDIENTE</span>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="nav-toggle-label">Menú</span>
+      </button>
+      <nav
+        id="site-navigation"
+        aria-label="Navegación principal"
+      >
+        <a
+          href="mclaren.html"
+          aria-current="page"
+          >Inicio</a
+        >
+        <a href="calle.html">Calle</a>
+        <a href="lm.html">LM</a>
+        <a href="gt.html">GT</a>
+        <a href="gtr.html">GTR</a>
+        <a href="registro.html">Registro de unidades ↗</a>
+        <a href="galeria.html">Imágenes</a>
+      </nav>
+      <div
+        class="language-switch"
+        role="group"
+        aria-label="Idioma / Language"
+      >
+        <button
+          type="button"
+          data-language="es"
+          lang="es"
+          aria-label="Español"
+          aria-pressed="true"
+        >
+          <span class="language-full">Español</span
+          ><span
+            class="language-short"
+            aria-hidden="true"
+            >ES</span
+          >
+        </button>
+        <button
+          type="button"
+          data-language="en"
+          lang="en"
+          aria-label="English"
+          aria-pressed="false"
+        >
+          <span class="language-full">English</span
+          ><span
+            class="language-short"
+            aria-hidden="true"
+            >EN</span
+          >
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <section
+        class="showroom"
+        data-current-version="calle"
+        aria-label="Explorador del McLaren F1"
+      >
+        <div
+          class="model-tabs"
+          role="group"
+          aria-label="Elegir versión"
+        >
+          <button
+            type="button"
+            data-version="calle"
+            aria-pressed="true"
+          >
+            F1 / Calle
+          </button>
+          <button
+            type="button"
+            data-version="lm"
+            aria-pressed="false"
+          >
+            F1 LM
+          </button>
+          <button
+            type="button"
+            data-version="gt"
+            aria-pressed="false"
+          >
+            F1 GT
+          </button>
+          <button
+            type="button"
+            data-version="gtr"
+            aria-pressed="false"
+          >
+            F1 GTR
+          </button>
+        </div>
+        <div class="showroom-grid">
+          <div class="car-copy">
+            <span
+              class="eyebrow"
+              id="car-tag"
+              >El origen / Carretera</span
+            >
+            <h1>McLaren <span id="car-name">F1</span><i>.</i></h1>
+            <p id="car-description">
+              Tres plazas, un puesto de conducción central y un V12 atmosférico.
+              La expresión original de una idea: hacer de la conducción el
+              centro de todo.
+            </p>
+            <a
+              id="version-link"
+              class="button"
+              href="calle.html"
+              >Explorar esta versión <span>↗</span></a
+            >
+          </div>
+          <div class="model-stage">
+            <span
+              class="stage-watermark"
+              aria-hidden="true"
+              >F1</span
+            ><model-viewer
+              id="car-viewer"
+              src="modelos/mclaren_f1-vista.glb"
+              alt="Modelo 3D interactivo del McLaren F1"
+              camera-controls
+              touch-action="pan-y"
+              camera-orbit="35deg 75deg 105%"
+              min-camera-orbit="auto 10deg 35%"
+              max-camera-orbit="auto 90deg 250%"
+              field-of-view="30deg"
+              shadow-intensity="1"
+              shadow-softness=".9"
+              exposure="1.1"
+              environment-image="neutral"
+              loading="eager"
+              reveal="auto"
+              interaction-prompt="none"
+              ><div
+                slot="progress-bar"
+                class="model-progress"
+              >
+                <span></span></div
+            ></model-viewer>
+            <p
+              class="viewer-status"
+              id="viewer-status"
+              role="status"
+            >
+              Cargando modelo 3D…
+            </p>
+            <div
+              class="viewer-error"
+              id="viewer-error"
+              hidden
+            >
+              <p>No se pudo mostrar el modelo 3D.</p>
+              <button
+                type="button"
+                id="retry-model"
+              >
+                Reintentar</button
+              ><a
+                id="model-download"
+                href="modelos/mclaren_f1-vista.glb"
+                download
+                >Descargar modelo</a
+              >
+            </div>
+            <p class="viewer-hint">
+              Arrastra para girar · Rueda o pellizca para acercar
+            </p>
+          </div>
+        </div>
+        <div class="showroom-bottom">
+          <div
+            class="hero-specs"
+            aria-label="Especificaciones principales"
+          >
+            <div><strong id="car-power">627</strong><span>CV (PS)</span></div>
+            <div><strong id="car-torque">651</strong><span>Nm</span></div>
+            <div><strong id="car-weight">1.140</strong><span>kg</span></div>
+            <div class="engine-spec">
+              <strong>V12</strong
+              ><span id="car-engine">6.064 cm³ · BMW S70/2</span>
+            </div>
+          </div>
+          <div
+            class="viewer-controls"
+            role="group"
+            aria-label="Controles del modelo"
+          >
+            <button
+              type="button"
+              data-orbit="35deg 75deg 105%"
+              aria-label="Vista de tres cuartos"
+            >
+              ¾</button
+            ><button
+              type="button"
+              data-orbit="0deg 80deg 105%"
+            >
+              Frente</button
+            ><button
+              type="button"
+              data-orbit="90deg 80deg 105%"
+            >
+              Perfil</button
+            ><button
+              type="button"
+              data-orbit="180deg 80deg 105%"
+            >
+              Atrás</button
+            ><button
+              type="button"
+              id="rotate-model"
+              aria-pressed="false"
+            >
+              Girar</button
+            ><button
+              type="button"
+              id="reset-camera"
+            >
+              Restablecer
+            </button>
+          </div>
+        </div>
+        <div class="showroom-caption">
+          <span id="weight-note"
+            >Masa en orden de marcha · Potencia en CV (PS), no bhp.</span
+          >
+          <details class="model-credit">
+            <summary>Créditos del modelo 3D</summary>
+            <p>
+              <a
+                id="model-source"
+                href="https://sketchfab.com/3d-models/mclaren-f1-c99f9848560c41f8b723493721ef5e93"
+                >Modelo McLaren F1</a
+              >
+              por
+              <a
+                id="model-author"
+                href="https://sketchfab.com/Alex.Ka."
+                >Alex.Ka.</a
+              >
+              ·
+              <a
+                id="model-license"
+                href="https://creativecommons.org/licenses/by-nc/4.0/"
+                >CC BY-NC 4.0</a
+              >.
+              <span id="model-adaptation"
+                >Adaptación de presentación: escenario, humo y sombra plana
+                retirados; orientación nivelada. Geometría y texturas del
+                vehículo conservadas.</span
+              >
+            </p>
+            <p>
+              Representación 3D orientativa; la configuración visual puede
+              diferir de la ficha de fábrica.
+            </p>
+          </details>
+        </div>
+        <noscript
+          ><p class="source">
+            El modelo 3D necesita JavaScript. Las especificaciones se pueden
+            consultar a continuación.
+          </p></noscript
+        >
+      </section>
+      <section
+        class="section"
+        id="versiones"
+      >
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">01 / LA FAMILIA</span>
+            <h2>Una leyenda. Cuatro expresiones.</h2>
+          </div>
+          <p>De la carretera a Le Mans.</p>
+        </div>
+        <div class="version-grid">
+          <a
+            class="version-card"
+            href="calle.html"
+          >
+            <span class="eyebrow">El origen / Carretera</span>
+            <h3>F1</h3>
+            <p>627 CV · 1.140 kg</p>
+            <span
+              class="arrow"
+              aria-hidden="true"
+              >↗</span
+            >
+          </a>
+          <a
+            class="version-card"
+            href="lm.html"
+          >
+            <span class="eyebrow">Homenaje a Le Mans / Carretera</span>
+            <h3>F1 LM</h3>
+            <p>680 CV · 1.062 kg</p>
+            <span
+              class="arrow"
+              aria-hidden="true"
+              >↗</span
+            >
+          </a>
+          <a
+            class="version-card"
+            href="gt.html"
+          >
+            <span class="eyebrow">Longtail / Homologación 1997</span>
+            <h3>F1 GT</h3>
+            <p>627 CV · 1.120 kg</p>
+            <span
+              class="arrow"
+              aria-hidden="true"
+              >↗</span
+            >
+          </a>
+          <a
+            class="version-card"
+            href="gtr.html"
+          >
+            <span class="eyebrow">Competición / Especificación 1995</span>
+            <h3>F1 GTR</h3>
+            <p>600 CV · 1.050 kg</p>
+            <span
+              class="arrow"
+              aria-hidden="true"
+              >↗</span
+            >
+          </a>
+        </div>
+      </section>
+      <section class="registry-callout">
+        <div>
+          <span class="eyebrow">02 / REGISTRO DE UNIDADES</span>
+          <h2>Cada chasis tiene su historia.</h2>
+          <p>
+            Explora los colores, las configuraciones y la trayectoria de las
+            unidades documentadas del McLaren F1.
+          </p>
+        </div>
+        <a
+          class="button"
+          href="registro.html"
+          >Explorar el registro <span>↗</span></a
+        >
+      </section>
+    </main>
+    <footer>
+      <span>McLaren F1 / Archivo independiente</span
+      ><span
+        >Historia, ingeniería y registro de unidades · No afiliado a
+        McLaren</span
+      >
+    </footer>
+  </body>
+</html>

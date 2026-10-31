@@ -1,0 +1,459 @@
+.gallery-intro {
+  padding: 50px 5% 24px;
+}
+
+.gallery-intro h1 {
+  font-size: clamp(42px, 6vw, 78px);
+  margin-bottom: 12px;
+}
+
+.gallery-intro h1 span {
+  color: #adb7a4;
+}
+
+.gallery-section {
+  padding: 0 5% 70px;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.gallery-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--muted);
+  min-width: 160px;
+}
+
+.gallery-search {
+  flex: 1;
+}
+
+.gallery-filters input,
+.gallery-filters select {
+  padding: 11px 12px;
+  min-height: 44px;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid #444c43;
+  border-radius: 0;
+  font-size: 13px;
+}
+
+.gallery-reset {
+  min-height: 44px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.gallery-count {
+  font-size: 12px;
+  margin: 23px 0 16px;
+}
+
+/* Solo cambia el número de columnas; las fotos mantienen su proporción
+   en la miniatura y se muestran completas al abrir el visor. */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.gallery-card {
+  margin: 0;
+  min-width: 0;
+}
+
+.gallery-open {
+  display: block;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #1b211b;
+  cursor: zoom-in;
+}
+
+.gallery-open img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.gallery-open:hover img {
+  transform: scale(1.025);
+}
+
+.gallery-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-size: 12px;
+  color: var(--muted);
+  height: 100%;
+}
+
+.gallery-card figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 9px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.gallery-card strong {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.gallery-empty {
+  text-align: center;
+  padding: 45px 10px;
+  border: 1px solid var(--line);
+}
+
+.photo-dialog {
+  width: min(1240px, 94vw);
+  max-height: 94vh;
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #121612;
+  color: var(--text);
+}
+
+.photo-dialog::backdrop {
+  background: #000d;
+}
+
+.photo-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.photo-top h2 {
+  font-size: 19px;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.photo-top button {
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 4px 10px;
+}
+
+.photo-stage {
+  position: relative;
+  background: #090b09;
+}
+
+/* contain evita recortar el automóvil en la vista ampliada. */
+.photo-stage img {
+  display: block;
+  width: 100%;
+  height: min(69vh, 760px);
+  object-fit: contain;
+}
+
+.photo-stage button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #121612dc;
+  color: var(--text);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 20px;
+}
+
+.photo-stage button:disabled {
+  display: none;
+}
+
+#photo-previous {
+  left: 10px;
+}
+
+#photo-next {
+  right: 10px;
+}
+
+.photo-caption,
+.photo-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 11px;
+}
+
+.photo-caption {
+  padding-top: 15px;
+  color: var(--muted);
+}
+
+.photo-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-intro {
+    padding: 28px var(--page-gutter) 16px;
+  }
+
+  .gallery-intro .eyebrow {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .gallery-intro h1 {
+    font-size: clamp(32px, 9vw, 40px);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .gallery-section {
+    padding: 0 var(--page-gutter) 40px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+
+  .gallery-filters {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .gallery-filters label {
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    gap: 8px;
+  }
+
+  .gallery-filters .gallery-search {
+    grid-column: 1 / -1;
+    padding-right: 60px;
+  }
+
+  .gallery-filters input,
+  .gallery-filters select {
+    min-width: 0;
+    min-height: 48px;
+    padding: 11px 10px;
+    border-radius: 9px;
+    font-size: 16px;
+  }
+
+  .gallery-reset {
+    position: absolute;
+    top: 42px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--bg);
+  }
+
+  .gallery-reset .reset-label {
+    display: none;
+  }
+
+  .gallery-reset .reset-icon {
+    display: inline;
+    font-size: 25px;
+  }
+
+  .gallery-count {
+    margin: 18px 0 14px;
+    font-size: 12px;
+  }
+
+  .gallery-open {
+    border-radius: 10px;
+  }
+
+  .gallery-card figcaption {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .gallery-card strong {
+    font-size: 13px;
+  }
+
+  .photo-dialog[open] {
+    /* dvh sigue la altura visible cuando aparecen o desaparecen
+       las barras del navegador móvil. Los controles ocupan sus propias filas. */
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 12px;
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: 100dvh;
+    border: 0;
+    padding: max(12px, env(safe-area-inset-top)) 16px
+      max(16px, env(safe-area-inset-bottom));
+  }
+
+  .photo-top {
+    margin: 0;
+    gap: 12px;
+  }
+
+  .photo-top h2 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .photo-top button {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    font-size: 20px;
+  }
+
+  .photo-stage {
+    min-height: 0;
+    /* El navegador conserva el scroll vertical y el pellizco;
+       ../js/galeria.js interpreta el desplazamiento horizontal. */
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .photo-stage img {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .photo-caption {
+    padding: 0;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .photo-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+  }
+
+  .photo-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .photo-links a:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .photo-dialog {
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-open img {
+    transition: none;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .photo-dialog[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 12px;
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: 16px var(--page-gutter);
+    border: 0;
+    border-radius: 0;
+  }
+
+  .photo-top {
+    margin: 0;
+  }
+
+  .photo-stage {
+    min-height: 0;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .photo-stage img {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .photo-caption {
+    align-items: center;
+    padding: 0;
+  }
+
+  .photo-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

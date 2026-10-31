@@ -1,0 +1,285 @@
+<!doctype html>
+<!-- Generado por generar-paginas.ps1. Editar la plantilla para conservar cambios. -->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="McLaren F1: modelos 3D interactivos, especificaciones de fábrica y registro por chasis."
+    />
+    <title>Imágenes · McLaren F1</title>
+    <script
+      src="js/traducciones.js"
+      defer
+    ></script>
+    <script
+      src="js/idiomas.js"
+      defer
+    ></script>
+    <script
+      src="js/sitio.js"
+      defer
+    ></script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/mclaren-f1.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="css/estilos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/galeria.css"
+    />
+    <script
+      src="js/datos.js"
+      defer
+    ></script>
+    <script
+      src="js/imagenes.js"
+      defer
+    ></script>
+    <script
+      src="js/galeria.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <a
+      class="skip"
+      href="#contenido"
+      >Saltar al contenido</a
+    >
+    <!-- Cabecera compartida: js/sitio.js controla el menú en pantallas compactas. -->
+    <header>
+      <a
+        class="brand"
+        href="mclaren.html"
+        aria-label="McLaren F1 · Inicio"
+      >
+        <img
+          class="brand-emblem"
+          src="assets/mclaren-f1.svg"
+          alt="Emblema McLaren F1"
+          width="106"
+          height="64"
+        />
+        <span>ARCHIVO INDEPENDIENTE</span>
+      </a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="nav-toggle-label">Menú</span>
+      </button>
+      <nav
+        id="site-navigation"
+        aria-label="Navegación principal"
+      >
+        <a href="mclaren.html">Inicio</a>
+        <a href="calle.html">Calle</a>
+        <a href="lm.html">LM</a>
+        <a href="gt.html">GT</a>
+        <a href="gtr.html">GTR</a>
+        <a href="registro.html">Registro de unidades ↗</a>
+        <a
+          href="galeria.html"
+          aria-current="page"
+          >Imágenes</a
+        >
+      </nav>
+      <div
+        class="language-switch"
+        role="group"
+        aria-label="Idioma / Language"
+      >
+        <button
+          type="button"
+          data-language="es"
+          lang="es"
+          aria-label="Español"
+          aria-pressed="true"
+        >
+          <span class="language-full">Español</span
+          ><span
+            class="language-short"
+            aria-hidden="true"
+            >ES</span
+          >
+        </button>
+        <button
+          type="button"
+          data-language="en"
+          lang="en"
+          aria-label="English"
+          aria-pressed="false"
+        >
+          <span class="language-full">English</span
+          ><span
+            class="language-short"
+            aria-hidden="true"
+            >EN</span
+          >
+        </button>
+      </div>
+    </header>
+    <main id="contenido">
+      <!-- js/galeria.js filtra las fotos de js/imagenes.js y abre el visor ampliado. -->
+      <section class="gallery-intro">
+        <span class="eyebrow">McLAREN F1 / ARCHIVO VISUAL</span>
+        <h1>La colección,<br /><span>en imágenes.</span></h1>
+      </section>
+      <section
+        class="gallery-section"
+        aria-label="Fotografías por unidad"
+      >
+        <form
+          id="gallery-filters"
+          class="gallery-filters"
+          role="search"
+        >
+          <label class="gallery-search">
+            Buscar
+            <input
+              id="gallery-search"
+              type="search"
+              placeholder="Chasis, color o decoración…"
+            />
+          </label>
+          <label>
+            Versión
+            <select id="gallery-version">
+              <option value="todas">Todas</option>
+              <option value="calle">Calle</option>
+              <option value="lm">LM</option>
+              <option value="gt">GT</option>
+              <option value="gtr">GTR</option>
+            </select>
+          </label>
+          <label>
+            Chasis
+            <select id="gallery-chassis">
+              <option value="">Todos</option>
+            </select>
+          </label>
+          <button
+            type="reset"
+            class="gallery-reset"
+            aria-label="Limpiar filtros"
+          >
+            <span
+              class="reset-icon"
+              aria-hidden="true"
+              >↺</span
+            >
+            <span class="reset-label">Limpiar filtros</span>
+          </button>
+        </form>
+        <p
+          id="gallery-count"
+          class="gallery-count"
+          aria-live="polite"
+        ></p>
+        <div
+          id="gallery-grid"
+          class="gallery-grid"
+        ></div>
+        <p
+          id="gallery-empty"
+          class="gallery-empty"
+          hidden
+        >
+          No hay imágenes que coincidan con los filtros.
+        </p>
+        <noscript>Activa JavaScript para explorar las fotografías.</noscript>
+      </section>
+      <dialog
+        id="photo-dialog"
+        class="photo-dialog"
+        aria-labelledby="photo-title"
+      >
+        <div class="photo-top">
+          <h2 id="photo-title"></h2>
+          <button
+            id="photo-close"
+            type="button"
+            aria-label="Cerrar imagen"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="photo-stage">
+          <img
+            id="photo-image"
+            alt=""
+          />
+          <button
+            id="photo-previous"
+            type="button"
+            aria-label="Imagen anterior"
+          >
+            ←
+          </button>
+          <button
+            id="photo-next"
+            type="button"
+            aria-label="Imagen siguiente"
+          >
+            →
+          </button>
+        </div>
+        <div class="photo-caption">
+          <span
+            id="photo-position"
+            aria-live="polite"
+          ></span>
+          <div class="photo-links">
+            <a
+              id="photo-record"
+              href="registro.html"
+              >Ficha de la unidad ↗</a
+            >
+            <a
+              id="photo-source"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Fuente ↗</a
+            >
+            <a
+              id="photo-original"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Imagen original ↗</a
+            >
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <footer>
+      <span>McLaren F1 / Archivo independiente</span
+      ><span
+        >Historia, ingeniería y registro de unidades · No afiliado a
+        McLaren</span
+      >
+    </footer>
+  </body>
+</html>

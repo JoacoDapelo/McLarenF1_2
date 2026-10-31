@@ -1,0 +1,464 @@
+@charset "UTF-8";
+/* Paleta compartida. Cambiar estas variables actualiza todas las páginas. */
+:root {
+  --bg: #111312;
+  --panel: #1a1d1b;
+  --text: #f1f0e9;
+  --muted: #a4aaa4;
+  --line: #343934;
+  --accent: #ff8a35;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+a,
+button,
+input,
+select {
+  outline-offset: 5px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+}
+/* Cabecera de escritorio; el menú compacto se define más abajo. */
+header {
+  padding: 26px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  gap: 26px;
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.brand-emblem {
+  display: block;
+  width: 106px;
+  height: 64px;
+  object-fit: contain;
+}
+.brand span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--muted);
+  font-weight: 400;
+}
+nav {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+nav a {
+  padding: 7px 0;
+}
+nav a:hover,
+nav a[aria-current] {
+  color: var(--accent);
+}
+.nav-toggle,
+.reset-icon {
+  display: none;
+}
+.language-switch {
+  display: flex;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.language-switch button {
+  min-width: 44px;
+  min-height: 38px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+.language-switch button[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--bg);
+}
+.language-short {
+  display: none;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(48px, 7.8vw, 112px);
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+}
+h2 {
+  font-size: clamp(28px, 3.3vw, 45px);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+p {
+  color: var(--muted);
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 24px;
+}
+.button {
+  background: var(--accent);
+  color: #161713;
+  padding: 15px 22px;
+  display: inline-flex;
+  gap: 45px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+.button:hover {
+  background: #ffab6d;
+}
+.section {
+  padding: 70px 5%;
+}
+.section-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.section-title h2 {
+  margin: 0;
+}
+.section-title p {
+  font-size: 13px;
+  margin: 0;
+}
+.registry-callout {
+  margin: 20px 5% 70px;
+  padding: 42px;
+  background: #222821;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-top: 2px solid var(--accent);
+}
+.registry-callout p {
+  max-width: 570px;
+  margin-bottom: 0;
+}
+.registry-callout .button {
+  flex-shrink: 0;
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.version-hero {
+  padding: 40px 5% 65px;
+  background: radial-gradient(ellipse at 90% 80%, #343c2c, transparent 60%);
+}
+.back {
+  font-size: 12px;
+  color: var(--muted);
+  display: inline-block;
+  margin-bottom: 50px;
+}
+.version-hero h1 {
+  margin-bottom: 28px;
+}
+.orange {
+  color: var(--accent);
+}
+.lead {
+  max-width: 750px;
+  font-size: 20px;
+}
+.specs {
+  display: flex;
+  gap: 60px;
+  margin-top: 45px;
+}
+.specs span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+.specs strong {
+  font-weight: 400;
+  font-size: 21px;
+}
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+.text-button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--accent);
+  padding: 10px 0;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+#nota {
+  margin-top: 20px;
+}
+.source {
+  padding: 0 5% 35px;
+  font-size: 11px;
+}
+.source a {
+  text-decoration: underline;
+}
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background: var(--accent);
+  color: #111;
+  padding: 10px;
+  z-index: 10;
+}
+.skip:focus {
+  top: 10px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+/* Prioridad sobre display:flex/grid para que los filtros y avisos ocultos
+   no reaparezcan por una regla de presentación más específica. */
+[hidden] {
+  display: none !important;
+}
+/* Mantener este punto de corte sincronizado con el menú de ../js/sitio.js.
+   Los márgenes seguros evitan que el contenido quede bajo un recorte de pantalla. */
+@media (max-width: 900px) {
+  :root {
+    --page-gutter: max(
+      clamp(16px, 4.5vw, 28px),
+      env(safe-area-inset-left),
+      env(safe-area-inset-right)
+    );
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: 72px;
+    padding: 12px var(--page-gutter);
+    gap: 16px;
+    flex-wrap: wrap;
+    background: #111312f5;
+    backdrop-filter: blur(16px);
+  }
+  .brand {
+    gap: 0;
+  }
+  .brand-emblem {
+    width: 70px;
+    height: 43px;
+  }
+  .brand span {
+    display: none;
+  }
+  .language-switch {
+    order: 1;
+    margin-left: auto;
+    padding: 0;
+  }
+  .language-switch button {
+    padding: 7px;
+    min-height: 44px;
+  }
+  .language-full {
+    display: none;
+  }
+  .language-short {
+    display: inline;
+  }
+  .js .nav-toggle {
+    order: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--panel);
+    color: var(--text);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    gap: 8px;
+  }
+  .js #site-navigation {
+    display: none;
+    position: absolute;
+    inset: calc(100% - 1px) 0 auto;
+    padding: 12px var(--page-gutter) 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-bottom: 1px solid var(--line);
+    background: #111312;
+    box-shadow: 0 20px 30px #0006;
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+  }
+  .js header[data-menu-open] #site-navigation {
+    display: grid;
+  }
+  #site-navigation a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  #site-navigation a[aria-current] {
+    background: #ff8a3510;
+    border-color: #ff8a3550;
+  }
+  #site-navigation a:last-child {
+    grid-column: 1 / -1;
+  }
+  .section-title,
+  .registry-callout {
+    align-items: start;
+    flex-direction: column;
+  }
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .registry-callout {
+    margin: 12px var(--page-gutter) 40px;
+    padding: 24px;
+    gap: 24px;
+    border-radius: 14px;
+  }
+  .registry-callout .button {
+    width: 100%;
+  }
+  .button {
+    min-height: 48px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  .section {
+    padding: 40px var(--page-gutter);
+  }
+  .section-title {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .section-title p {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: clamp(27px, 5vw, 36px);
+    line-height: 1.2;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+  button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 6px;
+    padding: 24px var(--page-gutter) calc(24px + env(safe-area-inset-bottom));
+    font-size: 12px;
+  }
+  .specs {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .lead {
+    font-size: 17px;
+  }
+}
+@media (max-width: 360px) {
+  header {
+    gap: 8px;
+  }
+  .js .nav-toggle {
+    gap: 6px;
+    padding-inline: 10px;
+  }
+}
+/* Respeta la preferencia del usuario de reducir las animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

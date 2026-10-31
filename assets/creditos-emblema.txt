@@ -1,0 +1,9 @@
+# Emblema de la cabecera
+
+`mclaren-f1.svg` utiliza el emblema clásico del McLaren F1, con el símbolo F1 rojo y la placa McLaren debajo.
+
+- Fuente: [McLaren F1 en Worldvectorlogo](https://worldvectorlogo.com/logo/mclaren-f1-2).
+- Archivo de origen: `https://cdn.worldvectorlogo.com/logos/mclaren-f1-2.svg`.
+- Adaptación: se retiró el fondo blanco y se ajustó el área visible del SVG; se conservan los trazados y colores del emblema.
+
+El archivo se utiliza como imagen de cabecera y favicon. Las marcas pertenecen a sus respectivos titulares. El sitio mantiene su identificación como archivo independiente.

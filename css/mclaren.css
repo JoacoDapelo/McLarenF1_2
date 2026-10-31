@@ -1,0 +1,138 @@
+.hero {
+  padding: 65px 5% 55px;
+  min-height: 570px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 85% 50%, #353d2e, transparent 65%);
+}
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 27px;
+  max-width: 950px;
+}
+.hero h1 span {
+  color: #b3b9aa;
+}
+.hero p {
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+}
+.hero .button {
+  position: relative;
+  z-index: 1;
+  margin-top: 15px;
+}
+.wordmark {
+  position: absolute;
+  right: 4%;
+  bottom: -55px;
+  font-size: clamp(200px, 31vw, 450px);
+  font-weight: 900;
+  line-height: 1;
+  color: #bec9a70c;
+  font-style: italic;
+  letter-spacing: -40px;
+  pointer-events: none;
+}
+.wordmark span {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 14px;
+  text-align: right;
+  padding-bottom: 65px;
+  color: #bec9a735;
+}
+/* Accesos a las versiones. La cuadrícula se reduce a dos columnas en móvil. */
+.version-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+}
+.version-card {
+  position: relative;
+  min-height: 210px;
+  padding: 25px;
+  border-right: 1px solid var(--line);
+  background: var(--panel);
+}
+.version-card:last-child {
+  border: 0;
+}
+.version-card:hover {
+  background: #293025;
+}
+.version-card .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.3px;
+}
+.version-card h3 {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+.version-card p {
+  font-size: 12px;
+}
+.arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 28px;
+  color: var(--accent);
+}
+@media (max-width: 850px) {
+  .version-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .version-card {
+    border-bottom: 1px solid var(--line);
+  }
+  .hero {
+    min-height: 520px;
+  }
+  .wordmark {
+    opacity: 0.5;
+  }
+}
+@media (max-width: 440px) {
+  .version-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 0;
+    gap: 10px;
+  }
+  .version-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    min-height: 180px;
+  }
+  .version-card:last-child {
+    border: 1px solid var(--line);
+  }
+  .version-card .eyebrow {
+    min-height: 36px;
+    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 0.7px;
+  }
+  .version-card h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .version-card p {
+    margin-bottom: 20px;
+  }
+  .version-card .arrow {
+    bottom: 12px;
+    right: 14px;
+  }
+  .hero {
+    padding-top: 45px;
+  }
+  .wordmark {
+    display: none;
+  }
+}
